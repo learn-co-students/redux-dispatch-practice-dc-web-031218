@@ -15,8 +15,8 @@ describe('managePets reducer', function() {
   })
 
   it("removes the pet when action type is REMOVE_PET and the action has a property of id for the pet to be removed", function(){
-    let state = {pets: [{name: 'Splash', species: 'Turtle'}, {name: 'avalanche', species: 'puppy', id: 101}, {name: 'sally', species: 'camel', id: 102}]}
-    expect(managePets(state, {type: "REMOVE_PET", id: 101})).toEqual({pets: [{name: 'Splash', species: 'Turtle'}, {name: 'sally', species: 'camel', id: 102}]});
+    let state = {pets: [{name: 'Splash', species: 'Turtle', id: 100}, {name: 'avalanche', species: 'puppy', id: 101}, {name: 'sally', species: 'camel', id: 102}]}
+    expect(managePets(state, {type: "REMOVE_PET", id: 101})).toEqual({pets: [{name: 'Splash', species: 'Turtle', id: 100}, {name: 'sally', species: 'camel', id: 102}]});
   })
 
   it("adheres to the rules of being a pure function, by not changing the original state, and instead returning a new object", function(){
